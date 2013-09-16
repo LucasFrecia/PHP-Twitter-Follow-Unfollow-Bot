@@ -8,7 +8,7 @@
      'YOUR_TWITTER_APP_OAUTH_SECRET');
      
 //FULL FOLLOWERS ARRAY WITH CURSOR ( FOLLOWERS > 5000)
-    $e = 0;
+    $e = 1;
     $cursor = -1;
     $full_followers = array();
     do {
@@ -27,7 +27,7 @@
 echo "Number of followers:" .$e. "<br /><br />";
 
 //FULL FRIEND ARRAY WITH CURSOR (FOLLOWING > 5000)
-    $e = 0;
+    $e = 1;
     $cursor = -1;
     $full_friends = array();
     do {
