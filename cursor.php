@@ -53,7 +53,7 @@ foreach( $full_friends as $iFollow )
 $isFollowing = in_array( $iFollow, $full_followers );
  
 echo $index .":"."$iFollow: ".( $isFollowing ? 'OK' : '!!!' )."<br/>";
-$index++;
+
  if( !$isFollowing )
     {
     $parameters = array( 'user_id' => $iFollow );
@@ -71,7 +71,7 @@ foreach( $full_followers as $heFollows )
 $amFollowing = in_array( $heFollows, $full_friends );
  
 echo $index .":"."$heFollows: ".( $amFollowing ? 'OK' : '!!!' )."<br/>";
-$index++;
+
  if( !$amFollowing )
     {
     $parameters = array( 'user_id' => $heFollows );
