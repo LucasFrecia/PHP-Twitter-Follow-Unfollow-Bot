@@ -58,6 +58,7 @@ echo $index .":"."$iFollow: ".( $isFollowing ? 'OK' : '!!!' )."<br/>";
     {
     $parameters = array( 'user_id' => $iFollow );
     $status = $oTwitter->post('friendships/destroy', $parameters);
+    $unfollow_total++;
     } if ($index++ === 999) break;
 }
 echo "<br /><br />";
@@ -75,6 +76,7 @@ echo $index .":"."$heFollows: ".( $amFollowing ? 'OK' : '!!!' )."<br/>";
     {
     $parameters = array( 'user_id' => $heFollows );
     $status = $oTwitter->post('friendships/create', $parameters);
+    $follow_total++;
     } if ($index++ === 999) break;
 }
  echo 'Unfollowed:'.$unfollow_total.'<br />';
