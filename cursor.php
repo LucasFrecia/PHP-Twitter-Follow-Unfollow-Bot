@@ -1,3 +1,6 @@
+<?php   
+   require_once 'twitteroauth.php';
+   
     $oTwitter = new TwitterOAuth 
     ('YOUR_TWITTER_APP_CONSUMER_KEY',
      'YOUR_TWITTER_APP_CONSUMER_SECRET',
