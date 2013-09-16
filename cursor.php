@@ -47,13 +47,13 @@ echo "Number of followers:" .$e. "<br /><br />";
 
 //IF I AM FOLLOWING USER AND HE IS NOT FOLLOWING ME BACK, I UNFOLLOW HIM
 $index=1;
-$unfollow_total=1;
+$unfollow_total=0;
 foreach( $full_friends as $iFollow )
 {
 $isFollowing = in_array( $iFollow, $full_followers );
  
 echo $index .":"."$iFollow: ".( $isFollowing ? 'OK' : '!!!' )."<br/>";
-
+$index++;
  if( !$isFollowing )
     {
     $parameters = array( 'user_id' => $iFollow );
@@ -65,13 +65,13 @@ echo "<br /><br />";
 
 //IF USER IS FOLLOWING ME AND I AM NOT, I FOLLOW
 $index=1;
-$follow_total = 1;
+$follow_total = 0;
 foreach( $full_followers as $heFollows )
 {
 $amFollowing = in_array( $heFollows, $full_friends );
  
 echo $index .":"."$heFollows: ".( $amFollowing ? 'OK' : '!!!' )."<br/>";
-
+$index++;
  if( !$amFollowing )
     {
     $parameters = array( 'user_id' => $heFollows );
