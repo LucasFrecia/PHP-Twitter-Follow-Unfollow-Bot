@@ -46,7 +46,8 @@ echo "Number of followers:" .$e. "<br /><br />";
     echo "Number of following:" .$e. "<br /><br />";
 
 //IF I AM FOLLOWING USER AND HE IS NOT FOLLOWING ME BACK, I UNFOLLOW HIM
-$index=0;
+$index=1;
+$unfollow_total=1;
 foreach( $full_friends as $iFollow )
 {
 $isFollowing = in_array( $iFollow, $full_followers );
@@ -55,14 +56,15 @@ echo $index .":"."$iFollow: ".( $isFollowing ? 'OK' : '!!!' )."<br/>";
 
  if( !$isFollowing )
     {
-    $parameters = array( 'user_id' => $isFollowing );
+    $parameters = array( 'user_id' => $iFollow );
     $status = $oTwitter->post('friendships/destroy', $parameters);
     } if ($index++ === 999) break;
 }
 echo "<br /><br />";
 
 //IF USER IS FOLLOWING ME AND I AM NOT, I FOLLOW
-$index=0;
+$index=1;
+$follow_total = 1;
 foreach( $full_followers as $heFollows )
 {
 $amFollowing = in_array( $heFollows, $full_friends );
@@ -71,10 +73,11 @@ echo $index .":"."$heFollows: ".( $amFollowing ? 'OK' : '!!!' )."<br/>";
 
  if( !$amFollowing )
     {
-    $parameters = array( 'user_id' => $amFollowing );
+    $parameters = array( 'user_id' => $heFollows );
     $status = $oTwitter->post('friendships/create', $parameters);
     } if ($index++ === 999) break;
 }
- 
+ echo 'Unfollowed:'.$unfollow_total.'<br />';
+ echo 'Followed:'.$follow_total.'<br />';
  
 ?>
