@@ -53,13 +53,13 @@ foreach( $full_friends as $iFollow )
 $isFollowing = in_array( $iFollow, $full_followers );
  
 echo $index .":"."$iFollow: ".( $isFollowing ? 'OK' : '!!!' )."<br/>";
-
+$index++;
  if( !$isFollowing )
     {
     $parameters = array( 'user_id' => $iFollow );
     $status = $oTwitter->post('friendships/destroy', $parameters);
     $unfollow_total++;
-    } if ($index++ === 999) break;
+    } if ($unfollow_total === 999) break;
 }
 echo "<br /><br />";
 
@@ -71,13 +71,13 @@ foreach( $full_followers as $heFollows )
 $amFollowing = in_array( $heFollows, $full_friends );
  
 echo $index .":"."$heFollows: ".( $amFollowing ? 'OK' : '!!!' )."<br/>";
-
+$index++;
  if( !$amFollowing )
     {
     $parameters = array( 'user_id' => $heFollows );
     $status = $oTwitter->post('friendships/create', $parameters);
     $follow_total++;
-    } if ($index++ === 999) break;
+    } if ($follow_total === 999) break;
 }
  echo 'Unfollowed:'.$unfollow_total.'<br />';
  echo 'Followed:'.$follow_total.'<br />';
