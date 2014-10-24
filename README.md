@@ -1,8 +1,7 @@
 twitter_follow_unfollow
 =======================
 
-PHP TWITTER - Simple crawler to follow/unfollow/count in appi 1.1 using abraham/twitteroauth with cursor.
+PHP TWITTER - Simple bot to follow followers, unfollow users who are not following us back, and count in twitter appi 1.1 using abraham/twitteroauth library, with cursors.
 
 
-For this to work you need to include twitteroauth.php in cursor.php.  twitteroauth.php and OAuth.php (file is included in twitteroauth.php)
-are here https://github.com/LucasFrecia/twitteroauth/tree/master/twitteroauth
+For this to work you need to include your twitter data in cursor.php and then hit it in konsole or by url.
