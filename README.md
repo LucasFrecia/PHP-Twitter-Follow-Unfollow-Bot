@@ -1,4 +1,4 @@
-twitter_follow_unfollow
+PHP-Twitter-Follow-Unfollow-Bot
 =======================
 
 PHP TWITTER - Simple bot to follow followers, unfollow users who are not following us back, and count in twitter appi 1.1 using abraham/twitteroauth library, with cursors.
